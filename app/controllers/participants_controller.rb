@@ -17,11 +17,11 @@ def create
         format.html { redirect_to (@participant.event), notice: 'Thankyou! will contact you soon' }
         format.json { render :show, status: :created, location: @participant }
       else
-<<<<<<< HEAD
+
         format.html { render :new }
-=======
+
         format.html { redirect_to (@participant.event), notice: ''  }
->>>>>>> sub
+
         format.json { render json: @participant.errors, status: :unprocessable_entity }
       end
 end
