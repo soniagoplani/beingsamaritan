@@ -1,0 +1,37 @@
+
+<div class="container">
+	<div class="row">
+	<!-- Contenedor Principal -->
+    <div class="comments-container">
+		<h1>Comments </h1>
+
+		<ul id="comments-list" class="comments-list">
+			<li>
+				<div class="comment-main-level">
+				<% Comment.where(post_id: @post.id).each do |y| %>
+					<!-- Avatar -->
+					<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+					<!-- Contenedor del Comentario -->
+					<div class="comment-box">
+						<div class="comment-head">
+							<h6 class="comment-name by-author">"<%=y.name%></h6>
+							<span><%= y.created_at.strftime("%d/%m/%Y %I:%M %p") %> </span>
+							<i class="fa fa-pencil-square-o "></i>
+
+							<i class="fa fa-trash-o"><%= link_to 'delete', problem_post_comment_path(@post.id,y.id), :method => :delete %> </i> 
+							<i class=" fa fa-comment "></i>	
+
+						</div>
+						<div class="comment-content">
+							<%=y.body%>
+						</div>
+					</div>
+					<%end%>
+				</div>
+				
+			</li>
+		</ul>
+	</div>
+	</div>
+	</div>
+

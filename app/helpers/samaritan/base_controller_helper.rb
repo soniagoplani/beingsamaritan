@@ -1,0 +1,2 @@
+module Samaritan::BaseControllerHelper
+end

@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag 'signin' %>
+
+  <h2 style="color:#ffffff" class="text-center">Log in</h2>
+ 
+   <div class="container">
+ <div class="row">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f| %>
+    
+    <%= f.label :email %>
+    <div>
+      <%= f.email_field :email, :placeholder => "Email", class: 'form-control' %><br>
+    </div>
+    <span id="email_error"></span>
+    <%= f.label :password %>
+    <div>
+      <%= f.password_field :password, :placeholder => "Password", autocomplete: "off", class: 'form-control' %>
+    </div>
+    <span id="password_error"></span><br/>
+
+    <% if devise_mapping.rememberable? -%>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+    <% end %>
+    <%= f.submit 'Login', id: "login", class: "btn btn-lg btn-primary btn-block" %>
+  <% end %>
+  </div>
+  </div>
+  
+</div>
+<br/>
+<%= render "devise/shared/links" %>

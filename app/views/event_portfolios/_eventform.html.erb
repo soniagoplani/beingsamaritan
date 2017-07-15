@@ -1,0 +1,59 @@
+
+ <div class="container">
+ <div class="row">
+<%= form_for @event,{class: 'form-signin'} do |f| %>
+
+        <%=f.label :Event_Name %><br>
+    <div>
+      <%= f.text_field :event_name, :placeholder => "Event Name" %>
+    </div><br>
+    <%=f.label :Organization_Name %><br>
+    <div>
+      <%= f.text_field :organization_name, :placeholder => "Organization Name",:value=> current_user.organization.name, :readonly => true  %>
+    </div><br>
+    <%=f.label :Event_Date %>
+    <div >
+        
+      <%= f.date_select :event_date, html5: true,class: 'form-control',:placeholder =>"Event Date"  %>
+    </div><br>
+    <%=f.label :Event_Start %><br>
+    <div >
+        <%= f.time_select :event_start,:placeholder =>"Event Start" %>
+    </div><br>
+    <%=f.label :Event_End %><br>
+    <div>
+          <%= f.time_select :event_end,:placeholder => "Event End"%>
+     </div><br>
+     <%=f.label :Event_Location %><br>
+     <div >
+        <%= f.text_field :event_loc,:placeholder => "Event Location" %>
+    </div><br>   
+    <%=f.label :Coordinators_Name %>  <br>
+    <div >
+        
+        <%= f.text_field :coordinator_name,:placeholder => "Coordinator's Name" %>
+    </div><br>
+    <%=f.label :What_happened_in_Event? %><br><br>
+    <div >
+        
+         <%= f.cktext_area :description,:placeholder => "What happened in the event??" %>
+    </div><br>
+    <%=f.label :Who_participated_in_Event %><br><br>
+    <div >
+        <%= f.cktext_area :participants, :placeholder => "Who participated in the event?"%>
+    </div><br>
+    <%= f.label :Highlights %><br><br>
+    <div class="field">
+         <%= f.cktext_area :highlights,:placeholder =>"Highlights" %>
+    </div><br>
+    <%= f.label :avatar, class: 'col-sm-2 control-label' %>
+    <div>
+     <%= f.file_field :avatar ,:placeholder => "Image of event"%>
+     </div><br>
+    <div class="actions">
+          <%= f.button(type: 'submit', class: "btn btn-primary") do %>
+          <i class="icon-ok icon-white"> Save</i>
+     <% end %>
+     </div>
+  </div>
+<% end %>

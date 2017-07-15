@@ -1,0 +1,40 @@
+
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <% @Ievents.each do |event| %>
+                <div class="post-preview">
+                  
+                        <h2 class="post-title">
+                            <%=link_to event.name , event_path(event.id)%>
+                        </h2>
+                        <h4 class="post-subtitle">
+                           BY: <%= event.coordinator_name %>
+                        </h4>
+                    
+                    <p class="post-meta"> on <%= event.scheduled_at.strftime("%d/%m/%Y") %></p>
+                     <br>
+                     <%=link_to "Read More", event_path(event.id),
+                        :class =>"btn btn-primary"%> 
+               </div>
+                  <%end%>
+                <hr>
+              
+                <!-- Pager -->
+                <ul class="pager">
+                    <li>
+                    <%= link_to_previous_page @Ievents, 'Previous Page' %>
+                    <%= link_to_next_page @Ievents, 'Next Page' %>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+

@@ -1,0 +1,40 @@
+
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <% @events.each do |event| %>
+                <div class="post-preview">
+                  
+                        <h2 class="post-title">
+                            <%=link_to event.event_name , event_portfolio_path(event.id)%>
+                        </h2>
+                        <h4 class="post-subtitle">
+                           BY: <%= event.organization_name %>
+                        </h4>
+                    
+                    <p class="post-meta"> on <%= event.event_date.strftime("%d/%m/%Y") %></p>
+                     <br>
+                     <%=link_to "Read More", event_portfolio_path(event.id),
+                        :class =>"btn btn-primary"%> 
+               </div>
+                  <%end%>
+                <hr>
+              
+                <!-- Pager -->
+                <ul class="pager">
+                    <li>
+                    <%= link_to_previous_page @events, 'Previous Page' %>
+                    <%= link_to_next_page @events, 'Next Page' %>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+

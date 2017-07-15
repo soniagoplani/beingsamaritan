@@ -1,0 +1,191 @@
+
+
+<!--Header-part-->
+<div id="header">
+<% if user_signed_in? && current_user.organization?%>
+<h3>Welcome</h3>
+<h2><%=current_user.organization.name%></h2>
+<%end%>
+<!-- name of organization -->
+</div><br><br><br>
+<!--close-Header-part--> 
+
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav">
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome User</span><b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
+        <li class="divider"></li>
+        <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+      </ul>
+    </li>
+    <li class=""><a title="" href="#"><span class="text">Home</span></a></li>
+    <li class=""><a title="" href="#"><span class="text">Settings</span></a></li>
+   <li> <%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+   
+
+   
+  </ul>
+</div>
+<!--close-top-Header-menu-->
+<!--start-top-serch-->
+<div id="search">
+  <input type="text" placeholder="Search here..."/>
+  <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+</div>
+<!--close-top-serch-->
+<!--sidebar-menu-->
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+  <ul>
+    <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Calendar</span></a> </li>
+    <li> <a href="/problem_posts"><i class="icon icon-signal"></i> <span>View problem blogs  </span></a> </li>
+    <li><a href="tables.html"><i class="icon icon-th"></i> <span>To do list</span></a></li>
+    <li><a href="grid.html"><i class="icon icon-fullscreen"></i> <span>News updates</span></a></li>
+    <li class="submenu"> <a href="/event_portfolios/new"><i class="icon icon-th-list"></i> <span>Event Portfolio</span> </a>
+    </li>
+    <li><a href="/volunteers"><i class="icon icon-tint"></i> <span>View Volunteer list </span></a></li>
+    <li><a href="interface.html"><i class="icon icon-pencil"></i> <span>Eelements</span></a></li>
+    
+  </ul>
+</div>
+<!--sidebar-menu-->
+
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
+  </div>
+<!--End-breadcrumbs-->
+
+<!--Action boxes-->
+  <div class="container-fluid">
+    <div class="quick-actions_homepage">
+      <ul class="quick-actions">
+        <li class="bg_lb"> <a href="/organizations/dashboard"> <i class="icon-dashboard"></i>  My Dashboard </a> </li>
+        <li class="bg_lg span3"> <a href="/problem_posts"> <i class="icon-signal"></i> View Blogs</a> </li>
+        <li class="bg_ly"> <a href="widgets.html"> <i class="icon-inbox"></i>Write blog </a> </li>
+        <li class="bg_ls"> <a href="/volunteers"> <i class="icon-fullscreen"></i> Volunteer List</a> </li>
+        <li class="bg_lo span3"> <a href="/event_portfolios/new"> <i class="icon-th-list"></i> Event portfolio form</a> </li>
+        
+      </ul>
+    </div>
+    </div>
+<!--End-Action boxes-->    
+
+
+    <hr/>
+  <div class="row-fluid">
+    <div class="span6">
+    <!--post boxes-->
+      <div class="widget-box">
+          <div class="widget-title bg_ly" data-toggle="collapse" href="#collapseG2">
+          <span class="icon">
+          <i class="icon-chevron-down"></i>
+          </span>
+          <h5>Latest Posts</h5>
+          </div>
+          <div class="widget-content nopadding collapse in" id="collapseG2">
+            <ul class="recent-posts">
+              <% @post.each do |y| %>
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            <%=link_to y.title , problem_post_path(y.id)%>
+                        </h2>
+                        <h3 class="post-subtitle">
+                            
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by  <%=y.name%><br> on <%= y.created_at.strftime("%d/%m/%Y %I:%M %p") %></p>
+                     <br>
+                    
+                 </div>
+                <%end%>
+                 <li>
+                 <%=link_to "View all", problem_posts_path,
+                        :class =>"btn btn-primary"%> 
+                  </li>
+               
+            </ul>
+         </div>
+         </div>
+       
+       
+        <!--news boxes-->
+        <div class="widget-box" style="color:#ffffff">
+          <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG3" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
+            <h5>News updates</h5>
+          </div>
+          <div class="widget-content nopadding updates collapse in" id="collapseG3">
+            <div class="new-update clearfix">
+            <i class="icon-ok-sign"></i>
+            <% @events.each do |event| %>
+            <%if current_user.organization? && current_user.organization.name == event.organization_name%>
+            <ul>
+             <h5> <li>  <%=link_to event.event_name , event_portfolio_path(event.id)%>  
+              
+             </li></h5>
+              </ul>
+             <%end%>
+             <%end%>
+            </div>
+            </div>
+        </div>   
+     </div>    
+      <div class="span6" >
+        <div class="widget-box widget-chat">
+          <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
+            <h5>Recent Volunteer Applications</h5>
+          </div>
+            <div class="chat-content panel-left2">
+            <% @volunteers.each do |v| %>
+             <ul>
+              <h4> <li><%=link_to v.full_name ,organization_volunteers_path %></li></h4>
+             </ul>
+
+             <%end%>
+            
+                      <%=link_to "View all data", organization_volunteers_path ,
+                        :class =>"btn btn-primary"%> 
+
+                    
+             </div>
+            </div>
+        </div>
+        </div>
+      
+
+  
+
+<!--end-main-container-part-->
+
+
+
+<script type="text/javascript">
+  // This function is called from the pop-up menus to transfer to
+  // a different page. Ignore if the value returned is a null string:
+  function goPage (newURL) {
+
+      // if url is empty, skip the menu dividers and reset the menu selection to default
+      if (newURL != "") {
+      
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-" ) {
+              resetMenu();            
+          } 
+          // else, send page to designated URL            
+          else {  
+            document.location.href = newURL;
+          }
+      }
+  }
+
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+</script>

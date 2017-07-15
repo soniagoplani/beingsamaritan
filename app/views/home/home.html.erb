@@ -1,0 +1,272 @@
+<div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="img-responsive img-full" src="assets/problemcategory/scroll-1" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="assets/problemcategory/scroll-2" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive img-full" src="assets/problemcategory/scroll-3" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                    <h2 class="brand-before">
+                        <small>Want to be a part</small>
+                    </h2>
+                    <h1 class="brand-name"><a href="/users/sign_up">REGISTER YOUR NGO WITH US>
+                    </a>
+                     </h1>
+                    <hr class="tagline-divider">
+                    <h2>
+                        <% if current_user.present? && current_user.organization? %>
+                    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+                  <% else %>
+                    <%= link_to 'Login', new_user_session_path %>
+                  <% end %>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Tell us about a problem you saw around
+                        <strong>Write Blog</strong>
+                    </h2>
+                    <hr>
+                     <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            
+                        <% @categories.limit(4).each do |c| %>
+                        <ul class="list-unstyled">
+                        <li>
+                    <%= link_to c.name_category , new_problem_category_problem_post_path(c.id)%>
+                        </li>
+                         </ul>
+                        <% end %>
+                        </div>
+                      <!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            
+                            <% @categories.last(4).each do |c| %>
+                            <ul class="list-unstyled">
+                            <li>
+                        <%= link_to c.name_category , new_problem_category_problem_post_path(c.id)%>
+                            </li>
+                            </ul>
+                            <%end%>
+                        </div>
+                        <!-- /.col-lg-6 -->       
+                        </div>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Want to be a volunteer of NGO in your city
+                        <strong><a href =/volunteers/new>Register Here</a> </strong>
+                    </h2>
+                    <hr>
+                    
+                    <p align="center">Invest your leisure time in uplifting this society <br>by shaking hands with active NGO's of your city.<br>
+                    Because if we won't who will??</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Want to initiate your event in your city
+                        <strong>
+                         <% if current_user.present? && current_user.samaritan? %>
+                      <%= link_to 'Initiate Event', new_samaritan_event_path %>
+                      <%else%>
+                        <a href =/users/sign_up>Sign_up(as a Samaritan)</a> 
+                         <%end%>
+                        </strong><br><br>
+                        <strong>
+                         <% if current_user.present? && current_user.samaritan? %>
+                         <%= link_to 'Logout', destroy_user_session_path %>
+                             <%else%>
+                             Already a member??  <%= link_to 'Login', new_user_session_path %>
+                             <%end%>
+
+                         </strong>
+                    </h2>
+                    <hr>
+                    
+                    <p align="center">Initiate events in your city for welfare of  society and surrounding.<br>We will help you get volunteers for your event.<br>from all over city.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                     
+                   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+         <ul class="nav nav-pills nav-justified">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">Problem Posts<small>By you</small></a></li>
+            <li data-target="#myCarousel" data-slide-to="1"><a href="#">News<small>Events done by NGO's</small></a></li>
+            <li data-target="#myCarousel" data-slide-to="2"><a href="#">Events<small>Upcoming events in your city</small></a></li>
+           
+        </ul>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="/assets/problemcategory/page1.jpg">
+                <div class="carousel-caption">
+                    <h3>
+                        </h3>
+                    <p>
+                    <ul class="recent-posts">
+                    <% @post.each do |y| %>
+                    <div class="post-preview">
+                    
+                        <h2 class="post-title">
+                           <li> <%=link_to y.title , problem_post_path(y.id)%></li>
+                        </h2>
+                        <h3 class="post-subtitle">
+                            
+                        </h3>
+                   
+                        <p class="post-meta">Posted by  <%=y.name%><br> on <%= y.created_at.strftime("%d/%m/%Y %I:%M %p") %>
+                        </p>
+                        <br>
+                    
+                    </div>
+                    <%end%>
+                       <li>
+                        <%=link_to "View all", problem_posts_path,
+                        :class =>"btn btn-primary"%> 
+                       </li>
+               
+                     </ul>
+                    </p>
+                </div>
+            </div>
+            <!-- End Item -->
+            <div class="item">
+
+                <img src="/assets/problemcategory/page4.jpg">
+                <div class="carousel-caption">
+                    <h3>
+                        NEWS</h3>
+                     <ul class="recent-posts">
+                        <% @events.each do |event| %>
+                     <div class="post-preview">
+                 
+                        <h3 class="post-title">
+                         <li>  <%=link_to event.event_name , event_portfolio_path(event.id)%>  </li>
+                        </h3>
+                        <h4>BY: <%= event.organization_name %>
+                            on <%= event.event_date.strftime("%d/%m/%Y") %>
+                        </h4>
+                  
+                     <br>
+                     
+               </div>
+                  <%end%>
+                 <li>
+                 <%=link_to "View all", event_portfolios_path,
+                        :class =>"btn btn-primary"%> 
+              </li>
+               
+            </ul>
+                </div>
+            </div>
+            <!-- End Item -->
+            <div class="item">
+
+                <img src="/assets/problemcategory/page3.jpg">
+                <div class="carousel-caption">
+                    <h3>
+                        Upcoming Events
+                    </h3>
+                    <ul class="recent-posts">
+                
+                        <% @Ievents.each do |event| %>
+                     <div class="post-preview">
+                 
+                        <h3 class="post-title">
+                         <li>  <%=link_to event.name , event_path(event.id)%> 
+
+                            <%= event.scheduled_at.strftime("%d/%m/%Y %I:%M %p")%> </li>
+                        </h3>
+                        <h4>At: <%= event.location %><br>
+                            ,  Contact: <%= event.coordinator_name%>(<%= event.coordinator_phone%>)
+                        </h4>
+                  
+                     <br>
+                     
+                   </div>
+                  <%end%>
+                 <li>
+                 <%=link_to "View all", events_path,
+                        :class =>"btn btn-primary"%> 
+                 </li>
+               
+            </ul>
+                </div>
+            </div>
+           
+        </div>
+        <!-- End Carousel Inner -->
+       
+    </div>
+    <!-- End Carousel -->
+
+
+
+                </div>
+            </div>
+        </div>       
+
+   
+      
+</div>
+
+        
+
+    
+
+    
+    
+
+    

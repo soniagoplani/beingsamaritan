@@ -1,0 +1,84 @@
+<!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('/assets/problempost/post.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1></h1>
+                        <hr class="small">
+                        <span class="subheading"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            <%= @post.try(:title) %>
+                        </h2>
+                        
+                    </a>
+                    <p class="post-meta">Posted by <a href="#"><%=@post.try(:name)%></a>  <br>on <%= @post.created_at.strftime("%d/%m/%Y %I:%M %p") %></p>
+                </div>
+
+                <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p><%= raw(@post.try(:content)) %></p>
+                </div>
+            </div>
+        </div>
+     <%= form_for [@post, Comment.new] do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="well">
+  <h4>Leave a Comment:</h4>
+  <div class="field">
+     <%= f.hidden_field  :post_id, :value=>@post.id%>
+  </div>
+
+  <div class="field">
+    <%= f.label :Text %><br>
+    <%= f.text_area :body %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Name %><br>
+    <% if user_signed_in? && current_user.organization?%>
+     <%= f.text_field :name,:value=> current_user.organization.name, :readonly => true %>
+     <% else%>
+    <%= f.text_field :name %>
+    <%end%>
+  </div>
+ 
+  <div class="actions">
+    <%= f.button(type: 'Post', class: "btn btn-primary") do %>
+    <i class="icon-ok icon-white"> Save</i>
+<% end %>
+  </div>
+  </div>
+<% end %>
+
+  
+<%= render 'comments', :collection => @post.comments %>
+    </article>
+                <hr>
+
+  

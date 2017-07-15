@@ -1,0 +1,42 @@
+/ Header-part
+#header
+  / name of organization
+/ close-Header-part
+/ top-Header-menu
+#user-nav.navbar.navbar-inverse
+  %ul.nav
+    %li#profile-messages.dropdown
+      %a.dropdown-toggle{"data-target" => "#profile-messages", "data-toggle" => "dropdown", :href => "#", :title => ""}
+        %i.icon.icon-user
+        %span.text Welcome User
+        %b.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href => "#"}
+            %i.icon-user
+            My Profile
+        %li.divider
+        %li
+          %a{:href => "#"}
+            %i.icon-check
+            My Tasks
+        %li.divider
+        %li
+          %a{:href => "login.html"}
+            %i.icon-key
+            Log Out
+    %li
+      %a{:href => "#", :title => ""}
+        %span.text Home
+    %li
+      %a{:href => "#", :title => ""}
+        %span.text Settings
+    %li
+      = link_to 'Logout', destroy_user_session_path, method: :delete
+/ close-top-Header-menu
+/ start-top-serch
+#search
+  %input{:placeholder => "Search here...", :type => "text"}/
+  %button.tip-bottom{:title => "Search", :type => "submit"}
+    %i.icon-search.icon-white
+/ close-top-serch

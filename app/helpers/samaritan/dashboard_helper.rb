@@ -1,0 +1,2 @@
+module Samaritan::DashboardHelper
+end

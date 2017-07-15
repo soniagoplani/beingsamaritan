@@ -1,0 +1,66 @@
+%br/
+%br/
+%br/
+%br/
+%br/
+.container
+  .row
+    = form_for(@event, url: samaritan_events_path, html: {class: 'form-signin'}) do |f|
+      = f.label :Event_Name
+      %br/
+      %div
+        = f.text_field :name, :placeholder => "Event Name"
+      %br/
+      = f.label :event_date
+      %div
+        = f.date_select :scheduled_at, order: [:day, :month, :year], class: 'form-control',:placeholder =>"Event Date"
+      %br/
+      = f.label :event_time
+      %div
+        = f.time_select :start_time, class: 'form-control'
+      %br/
+      = f.label :duration
+      %br/
+      %div
+        = f.text_field :duration,:placeholder => "Event Duration"
+      %br/
+      = f.label :Event_Location
+      %br/
+      %div
+        = f.text_field :location,:placeholder => "Event Location"
+      %br/
+      = f.label :Coordinators_Name
+      %br/
+      %div
+        = f.text_field :coordinator_name, :placeholder => "Coordinator's Name"
+      %br/
+      = f.label :Coordinators_email
+      %br/
+      %div
+      = if current_user.present? && current_user.samaritan?
+        = f.text_field :coordinator_email, value: current_user.email, readonly: true
+      %br/
+      = f.label :Coordinators_phone
+      %br/
+      %div
+        = f.text_field :coordinator_phone, :placeholder => "Coordinator's Phone No"
+      %br/
+      = f.label :What_will_happen_in_Event?
+      %br/
+      %br/
+      %div
+        = f.cktext_area :moto,:placeholder => "What will happen in the event??"
+      %br/
+      = f.label :Who_can_participate_in_Event
+      %br/
+      %br/
+      %div
+        = f.cktext_area :who_can_participate, :placeholder => "Who can participate in the event?"
+      %br/
+      = f.label :event_cost
+      %br/
+      .field
+        = f.text_field :event_cost, :placeholder =>"Event Cost"
+      %br/
+      .actions
+        = f.submit "Save", class: "btn btn-primary"

@@ -1,0 +1,29 @@
+/ main-container-part
+#content
+  / breadcrumbs
+  #content-header
+    #breadcrumb
+      %a.tip-bottom{:href => "index.html", :title => "Go to Home"}
+        %i.icon-home
+        Home
+  / End-breadcrumbs
+  / Action boxes
+  .container-fluid
+    %table.table.table-bordered.table-striped.table-hover
+      %thead
+        %tr
+          %th Full Name
+          %th Email
+          %th Phone No
+          %th Profession
+          %th Why Joining
+          %th Time Contribution
+      %tbody
+        - @volunteers.each do |volunteer|
+          %tr
+            %td= volunteer.full_name
+            %td= volunteer.email
+            %td= volunteer.phone_no
+            %td= volunteer.profession
+            %td= volunteer.why_you_joining
+            %td= volunteer.time_contribution

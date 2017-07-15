@@ -1,0 +1,39 @@
+
+= stylesheet_link_tag 'signin'
+.container
+  %h2.text-center Sign up
+  = form_for(@volunteer, html: {class: 'form-signin'}) do |f|
+    .field
+      = f.label :Organization
+      %br/
+      = f.select :organization_id, get_organization_for_select, {}, {class: "form-control input-md search_select2"}
+    .field
+      = f.label :First_name
+      %br/
+      = f.text_field :first_name, autofocus: true, :placeholder => "First Name", class: 'form-control'
+    .field
+      = f.label :Last_name
+      %br/
+      = f.text_field :last_name, :placeholder => "Last Name", class: 'form-control'
+    .field
+      = f.label :Email
+      %br/
+      = f.email_field :email, :placeholder => "Email", class: 'form-control'
+    .field
+      = f.label :Phone_no
+      %br/
+      = f.text_field :phone_no, :placeholder => "Phone no.", class: 'form-control'
+    .field
+      = f.label :Profession
+      %br/
+      = f.text_field :profession, :placeholder => "Profession.", class: 'form-control'
+    .field
+      = f.label :why_you_want_to_join?
+      %br/
+      = f.text_field :why_you_joining, :placeholder => "Why you joining", class: 'form-control'
+    .field
+      = f.label :How_much_time_can_you_contribute?
+      %br/
+      = f.text_field :time_contribution, :placeholder => "Time Contribution", class: 'form-control'
+    .actions
+      = f.submit "Submit", class: "btn btn-lg btn-primary btn-block"

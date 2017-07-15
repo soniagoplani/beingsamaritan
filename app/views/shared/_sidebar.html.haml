@@ -1,0 +1,47 @@
+/ sidebar-menu
+#sidebar
+  %a.visible-phone{:href => "#"}
+    %i.icon.icon-home
+    Dashboard
+  %ul
+    %li.active
+      %a{:href => "index.html"}
+        %i.icon.icon-home
+        %span Calendar
+    %li
+      %a{:href => "charts.html"}
+        %i.icon.icon-signal
+        %span View problem blogs
+    %li
+      %a{:href => "widgets.html"}
+        %i.icon.icon-inbox
+        %span Reset Password
+    %li
+      %a{:href => "tables.html"}
+        %i.icon.icon-th
+        %span To do list
+    %li
+      %a{:href => "grid.html"}
+        %i.icon.icon-fullscreen
+        %span News updates
+    %li.submenu
+      %a{:href => "#"}
+        %i.icon.icon-th-list
+        %span Event Portfolio
+        %span.label.label-important 3
+      %ul
+        %li
+          %a{:href => "form-common.html"} Basic Form
+        %li
+          %a{:href => "form-validation.html"} Form with Validation
+        %li
+          %a{:href => "form-wizard.html"} Form with Wizard
+    %li
+      = link_to organization_volunteers_path do
+        %i.icon.icon-tint
+        %span Volunteers
+    %li
+      %a{:href => "interface.html"}
+        %i.icon.icon-pencil
+        %span Eelements
+/ sidebar-menu

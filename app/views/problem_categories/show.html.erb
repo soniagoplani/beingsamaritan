@@ -1,0 +1,50 @@
+
+             
+
+
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/assets/problempost/posts.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Problem Posts</h1>
+                        <hr class="small">
+                        <span class="subheading"><%=@title%></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <% ProblemPost.where(category_id: @category.id).each do |y| %>
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            <%=link_to y.title , problem_post_path(y.id)%>
+                        </h2>
+                        <h4 class="post-subtitle">
+                            category: <%=y.category_name%>
+                        </h4>
+                    </a>
+                    <p class="post-meta">Posted by  <%=y.name%><br> on <%= y.created_at.strftime("%d/%m/%Y %I:%M %p") %></p>
+                     <br>
+                     <%=link_to "Read More", problem_post_path(y.id),
+                        :class =>"btn btn-primary"%> 
+               </div>
+                  <%end%>
+                <hr>
+              
+                <!-- Pager -->
+               
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+

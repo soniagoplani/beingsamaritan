@@ -1,0 +1,43 @@
+<%= form_for [@category, ProblemPost.new] do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="field">
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+    </div><br>
+    <div class="field">
+        <%= f.label :category %><br>
+        <%= f.text_field  :category_name,
+        :value=> @category.name_category, :readonly => true %>
+    </div><br>
+    <div class="field">
+         <%= f.hidden_field  :category_id, :value=>@category.id%>
+    </div>
+    <div class="field">
+         <%= f.label :content %><br>
+         <%= f.cktext_area :content %>
+    </div><br>
+  
+    <div class="field">
+         <%= f.label :name %><br>
+         <%= f.text_field :name %>
+    </div><br>
+  
+    <div class="actions">
+          <%= f.button(type: 'submit', class: "btn btn-primary") do %>
+          <i class="icon-ok icon-white"> Save</i>
+     <% end %>
+     </div>
+  </div>
+<% end %>
