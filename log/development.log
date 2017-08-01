@@ -32572,3 +32572,329 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-27 12:26:10 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (32.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#home as HTML
+  [1m[35mProblemCategory Load (75.7ms)[0m  SELECT  "problem_categories".* FROM "problem_categories" LIMIT 4
+  [1m[36mProblemCategory Load (1.0ms)[0m  [1mSELECT  "problem_categories".* FROM "problem_categories"  ORDER BY "problem_categories"."id" DESC LIMIT 4[0m
+  [1m[35mProblemPost Load (29.8ms)[0m  SELECT  "problem_posts".* FROM "problem_posts" LIMIT 4 OFFSET 0
+  [1m[36mEventPortfolio Load (61.4ms)[0m  [1mSELECT  "event_portfolios".* FROM "event_portfolios" LIMIT 10 OFFSET 0[0m
+  [1m[35mEvent Load (10.4ms)[0m  SELECT  "events".* FROM "events" LIMIT 4 OFFSET 0
+  Rendered home/home.html.erb within layouts/problem_category (288.9ms)
+  Rendered layouts/_header1.html.erb (1.1ms)
+  Rendered layouts/_footer1.html.erb (1.1ms)
+Completed 200 OK in 19420ms (Views: 19058.1ms | ActiveRecord: 283.4ms)
+
+
+Started GET "/assets/problemcategory/bootstrap.min.self-511807f34f490c5d04f397a2ad4fc4a9135fcb5300f3dd5cb88f1cf678357cf3.css?body=1" for 127.0.0.1 at 2017-07-27 12:26:31 +0530
+
+
+Started GET "/assets/problemcategory/business-casual.self-8ef042982e2901d403d2286a2483c945c7ac734df2fe3efbf29e783d8a2e5c3f.css?body=1" for 127.0.0.1 at 2017-07-27 12:26:31 +0530
+
+
+Started GET "/assets/problemcategory/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 127.0.0.1 at 2017-07-27 12:26:31 +0530
+
+
+Started GET "/assets/problemcategory/bootstrap.self-37de88235cb7ac5ca687eef1978055ad6f73f194a4ee63796647b017205c4af0.js?body=1" for 127.0.0.1 at 2017-07-27 12:26:31 +0530
+
+
+Started GET "/assets/problemcategory/jquery.self-aedf0b4f9535e7b1d01d6a9ad81e6ecdb5b9a82acf17f3798645b7dbca2d86a1.js?body=1" for 127.0.0.1 at 2017-07-27 12:26:31 +0530
+
+
+Started GET "/assets/problemcategory/bootstrap.self-ce4ff876691504f0f28b3c9bae0e691c640bbc9e2c4aa6dc2fe9fe0fe7e9bb1b.css?body=1" for 127.0.0.1 at 2017-07-27 12:26:31 +0530
+
+
+Started GET "/assets/problemcategory.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for 127.0.0.1 at 2017-07-27 12:26:31 +0530
+
+
+Started GET "/assets/problemcategory.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for 127.0.0.1 at 2017-07-27 12:26:31 +0530
+
+
+Started GET "/assets/problemcategory/scroll-1" for 127.0.0.1 at 2017-07-27 12:26:31 +0530
+
+
+Started GET "/assets/problemcategory/scroll-3" for 127.0.0.1 at 2017-07-27 12:26:32 +0530
+
+
+Started GET "/assets/problemcategory/scroll-2" for 127.0.0.1 at 2017-07-27 12:26:32 +0530
+
+
+Started GET "/assets/problemcategory/page4.jpg" for 127.0.0.1 at 2017-07-27 12:26:32 +0530
+
+
+Started GET "/assets/problemcategory/page1.jpg" for 127.0.0.1 at 2017-07-27 12:26:32 +0530
+
+
+Started GET "/assets/problemcategory/page3.jpg" for 127.0.0.1 at 2017-07-27 12:26:32 +0530
+
+
+Started GET "/assets/problemcategory/bg.jpg" for 127.0.0.1 at 2017-07-27 12:26:32 +0530
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-01 16:13:46 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#home as HTML
+  [1m[35mProblemCategory Load (0.8ms)[0m  SELECT  "problem_categories".* FROM "problem_categories" LIMIT 4
+  [1m[36mProblemCategory Load (0.8ms)[0m  [1mSELECT  "problem_categories".* FROM "problem_categories"  ORDER BY "problem_categories"."id" DESC LIMIT 4[0m
+  [1m[35mProblemPost Load (1.2ms)[0m  SELECT  "problem_posts".* FROM "problem_posts" LIMIT 4 OFFSET 0
+  [1m[36mEventPortfolio Load (1.0ms)[0m  [1mSELECT  "event_portfolios".* FROM "event_portfolios" LIMIT 10 OFFSET 0[0m
+  [1m[35mEvent Load (0.8ms)[0m  SELECT  "events".* FROM "events" LIMIT 4 OFFSET 0
+  Rendered home/home.html.erb within layouts/problem_category (83.5ms)
+  Rendered layouts/_header1.html.erb (1.0ms)
+  Rendered layouts/_footer1.html.erb (0.4ms)
+Completed 200 OK in 19017ms (Views: 18940.5ms | ActiveRecord: 18.9ms)
+
+
+Started GET "/assets/problemcategory/scroll-1" for 127.0.0.1 at 2017-08-01 16:14:06 +0530
+
+
+Started GET "/assets/problemcategory/scroll-2" for 127.0.0.1 at 2017-08-01 16:14:06 +0530
+
+
+Started GET "/assets/problemcategory/scroll-3" for 127.0.0.1 at 2017-08-01 16:14:06 +0530
+
+
+Started GET "/assets/problemcategory/page1.jpg" for 127.0.0.1 at 2017-08-01 16:14:06 +0530
+
+
+Started GET "/assets/problemcategory/page4.jpg" for 127.0.0.1 at 2017-08-01 16:14:06 +0530
+
+
+Started GET "/assets/problemcategory/page3.jpg" for 127.0.0.1 at 2017-08-01 16:14:06 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (28.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/problemcategory/bg.jpg" for 127.0.0.1 at 2017-08-01 16:14:06 +0530
+  [1m[36mProblemCategory Load (0.6ms)[0m  [1mSELECT  "problem_categories".* FROM "problem_categories" WHERE "problem_categories"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mProblemPost Load (0.6ms)[0m  [1mSELECT  "problem_posts".* FROM "problem_posts" WHERE "problem_posts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mProblemPost Load (0.6ms)[0m  SELECT  "problem_posts".* FROM "problem_posts" WHERE "problem_posts"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36mProblemCategory Load (0.5ms)[0m  [1mSELECT  "problem_categories".* FROM "problem_categories" WHERE "problem_categories"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (44.6ms)[0m  DELETE FROM "problem_categories" WHERE "problem_categories"."id" = $1  [["id", 2]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-01 16:51:19 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#home as HTML
+  [1m[35mProblemCategory Load (0.8ms)[0m  SELECT  "problem_categories".* FROM "problem_categories" LIMIT 4
+  [1m[36mProblemCategory Load (0.7ms)[0m  [1mSELECT  "problem_categories".* FROM "problem_categories"  ORDER BY "problem_categories"."id" DESC LIMIT 4[0m
+  [1m[35mProblemPost Load (1.2ms)[0m  SELECT  "problem_posts".* FROM "problem_posts" LIMIT 4 OFFSET 0
+  [1m[36mEventPortfolio Load (1.0ms)[0m  [1mSELECT  "event_portfolios".* FROM "event_portfolios" LIMIT 10 OFFSET 0[0m
+  [1m[35mEvent Load (0.8ms)[0m  SELECT  "events".* FROM "events" LIMIT 4 OFFSET 0
+  Rendered home/home.html.erb within layouts/problem_category (75.5ms)
+  Rendered layouts/_header1.html.erb (1.0ms)
+  Rendered layouts/_footer1.html.erb (0.4ms)
+Completed 200 OK in 1489ms (Views: 1435.3ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/assets/problemcategory/scroll-1" for 127.0.0.1 at 2017-08-01 16:51:21 +0530
+
+
+Started GET "/assets/problemcategory/scroll-2" for 127.0.0.1 at 2017-08-01 16:51:21 +0530
+
+
+Started GET "/assets/problemcategory/scroll-3" for 127.0.0.1 at 2017-08-01 16:51:21 +0530
+
+
+Started GET "/assets/problemcategory/page1.jpg" for 127.0.0.1 at 2017-08-01 16:51:21 +0530
+
+
+Started GET "/assets/problemcategory/page4.jpg" for 127.0.0.1 at 2017-08-01 16:51:21 +0530
+
+
+Started GET "/assets/problemcategory/page3.jpg" for 127.0.0.1 at 2017-08-01 16:51:21 +0530
+
+
+Started GET "/assets/problemcategory/bg.jpg" for 127.0.0.1 at 2017-08-01 16:51:21 +0530
+  [1m[36mProblemCategory Load (0.5ms)[0m  [1mSELECT  "problem_categories".* FROM "problem_categories" WHERE "problem_categories"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mProblemCategory Load (0.7ms)[0m  SELECT  "problem_categories".* FROM "problem_categories" WHERE "problem_categories"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mSQL (21.3ms)[0m  [1mDELETE FROM "problem_categories" WHERE "problem_categories"."id" = $1[0m  [["id", 5]]
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-01 16:54:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#home as HTML
+  [1m[35mProblemCategory Load (0.7ms)[0m  SELECT  "problem_categories".* FROM "problem_categories" LIMIT 4
+  [1m[36mProblemCategory Load (0.8ms)[0m  [1mSELECT  "problem_categories".* FROM "problem_categories"  ORDER BY "problem_categories"."id" DESC LIMIT 4[0m
+  [1m[35mProblemPost Load (1.1ms)[0m  SELECT  "problem_posts".* FROM "problem_posts" LIMIT 4 OFFSET 0
+  [1m[36mEventPortfolio Load (1.0ms)[0m  [1mSELECT  "event_portfolios".* FROM "event_portfolios" LIMIT 10 OFFSET 0[0m
+  [1m[35mEvent Load (0.8ms)[0m  SELECT  "events".* FROM "events" LIMIT 4 OFFSET 0
+  Rendered home/home.html.erb within layouts/problem_category (77.2ms)
+  Rendered layouts/_header1.html.erb (1.0ms)
+  Rendered layouts/_footer1.html.erb (0.4ms)
+Completed 200 OK in 1495ms (Views: 1440.4ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/assets/problemcategory/scroll-1" for 127.0.0.1 at 2017-08-01 16:54:45 +0530
+
+
+Started GET "/assets/problemcategory/page4.jpg" for 127.0.0.1 at 2017-08-01 16:54:45 +0530
+
+
+Started GET "/assets/problemcategory/page3.jpg" for 127.0.0.1 at 2017-08-01 16:54:45 +0530
+
+
+Started GET "/assets/problemcategory/page1.jpg" for 127.0.0.1 at 2017-08-01 16:54:45 +0530
+
+
+Started GET "/assets/problemcategory/scroll-3" for 127.0.0.1 at 2017-08-01 16:54:45 +0530
+
+
+Started GET "/assets/problemcategory/scroll-2" for 127.0.0.1 at 2017-08-01 16:54:45 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/problemcategory/bg.jpg" for 127.0.0.1 at 2017-08-01 16:54:45 +0530
+
+
+Started GET "/events/2" for 127.0.0.1 at 2017-08-01 16:55:48 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.8ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mParticipant Load (26.2ms)[0m  [1mSELECT "participants".* FROM "participants" WHERE "participants"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered events/_participant_form.html.erb (35.9ms)
+  Rendered events/show.html.erb within layouts/problem_post (205.2ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 1963ms (Views: 1798.8ms | ActiveRecord: 33.1ms)
+
+
+Started GET "/assets/problem_post/bootstrap.min.self-511807f34f490c5d04f397a2ad4fc4a9135fcb5300f3dd5cb88f1cf678357cf3.css?body=1" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+
+
+Started GET "/assets/problem_post/font-awesome.min.self-e663a7f3c42afe7d39dab712b7bccf2f25e68c8364c8b170c2b19114f83ae0a6.css?body=1" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+
+
+
+
+Started GET "/assets/problem_post/bootstrap.min.self-504d59678f10d79a661b6cecdce5b8c1d5bfd98e860614584c0a40399552d61f.js?body=1" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+Started GET "/assets/problem_post/clean-blog.min.self-1321915dbe06fc0cb446ba7ea2c71c8b92d100babd3f2821c34f448aab1501f3.css?body=1" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+
+
+Started GET "/assets/problem_post/contact_me.self-7c8a6cdfac4a8660e05f21597a0c8cc68f3ee1de09e7b0879628f69d669ea397.js?body=1" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+
+
+Started GET "/assets/problem_post/clean-blog.min.self-861d9033a53fc24d67e2402fb60a4b2f57a15f097104171b7d25f1c388454122.js?body=1" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+
+
+Started GET "/assets/problem_post.self-ef88f69bc25d98c38c46f5f6c510218fc623ec5bb9074ab420e3bdb7f5290b19.css?body=1" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+
+
+Started GET "/assets/problem_post/jquery.min.self-693ce4426a47c40b80ac9cd618fbd633c4182bff664d1f25009813f456c3ed12.js?body=1" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+
+
+Started GET "/assets/ckeditor/ckeditor.self-3bf56bf393bee65859bc77ba70e26a11bb7e07f0991ba908d1e9a37446e7022b.js?body=1" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+
+
+Started GET "/assets/problem_post/jqBootstrapValidation.self-8634f60ded7baed71adee5481c39ec7bc3ab53b7a1df0b6706cc82529eae7d6f.js?body=1" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+
+
+Started GET "/assets/ckeditor/init.self-2f3e80b764bc18c9362e6f3326e1f32d4a8bdceff67345a3453a93b111626ff3.js?body=1" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+
+
+Started GET "/assets/problem_post.self-79488488398f5f5aed236dd6e9f914599370d04dfe70fda61b8c83bf739b1088.js?body=1" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+
+
+Started GET "/events/vendor/font-awesome/css/font-awesome.min.css" for 127.0.0.1 at 2017-08-01 16:55:50 +0530
+
+ActionController::RoutingError (No route matches [GET] "/events/vendor/font-awesome/css/font-awesome.min.css"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.9ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.6ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (116.7ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (87.4ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (321.7ms)
+
+
+Started GET "/events/vendor/font-awesome/css/font-awesome.min.css" for 127.0.0.1 at 2017-08-01 16:55:51 +0530
+
+ActionController::RoutingError (No route matches [GET] "/events/vendor/font-awesome/css/font-awesome.min.css"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.5ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (69.4ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (29.1ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/sonia/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (61.4ms)
